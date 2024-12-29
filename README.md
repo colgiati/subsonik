@@ -1,5 +1,5 @@
 # subsonik
-Kotlin Android library for the Subsonic API.
+Kotlin Android library for the Subsonic API. Uses retrofit to make the HTTP calls and kotlin coroutines.
 
 ## Usage
 
