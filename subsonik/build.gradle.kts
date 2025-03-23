@@ -38,7 +38,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "dev.olgiati.subsonik"
             artifactId = "subsonik"
-            version = "0.2.0"
+            version = "0.2.1"
 
             afterEvaluate {
                 from(components["release"])
