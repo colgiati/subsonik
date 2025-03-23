@@ -1,12 +1,12 @@
 package dev.olgiati.subsonik.api
 
+import dev.olgiati.subsonik.model._base.SubsonicDTO
+import dev.olgiati.subsonik.model._base.SubsonicResponse
+import dev.olgiati.subsonik.model.response.playlists.GetPlaylistResponse
+import dev.olgiati.subsonik.model.response.playlists.GetPlaylistsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
-import dev.olgiati.subsonik.model.SubsonicDTO
-import dev.olgiati.subsonik.model.SubsonicResponse
-import dev.olgiati.subsonik.model.playlists.GetPlaylistResponse
-import dev.olgiati.subsonik.model.playlists.GetPlaylistsResponse
 
 interface PlaylistsApi {
     @GET("/rest/getPlaylists")

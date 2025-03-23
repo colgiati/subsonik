@@ -1,22 +1,23 @@
 package dev.olgiati.subsonik.api
 
+import dev.olgiati.subsonik.model._base.SubsonicDTO
+import dev.olgiati.subsonik.model.response.browsing.GetAlbumInfoResponse
+import dev.olgiati.subsonik.model.response.browsing.GetAlbumResponse
+import dev.olgiati.subsonik.model.response.browsing.GetArtistInfo2Response
+import dev.olgiati.subsonik.model.response.browsing.GetArtistInfoResponse
+import dev.olgiati.subsonik.model.response.browsing.GetArtistResponse
+import dev.olgiati.subsonik.model.response.browsing.GetArtistsResponse
+import dev.olgiati.subsonik.model.response.browsing.GetGenresResponse
+import dev.olgiati.subsonik.model.response.browsing.GetIndexesResponse
+import dev.olgiati.subsonik.model.response.browsing.GetMusicDirectoryResponse
+import dev.olgiati.subsonik.model.response.browsing.GetMusicFoldersResponse
+import dev.olgiati.subsonik.model.response.browsing.GetSimilarSongsResponse
+import dev.olgiati.subsonik.model.response.browsing.GetSongResponse
+import dev.olgiati.subsonik.model.response.browsing.GetTopSongsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
-import dev.olgiati.subsonik.model.SubsonicDTO
-import dev.olgiati.subsonik.model.browsing.getAlbum.GetAlbumResponse
-import dev.olgiati.subsonik.model.browsing.getAlbumInfo.GetAlbumInfoResponse
-import dev.olgiati.subsonik.model.browsing.getArtist.GetArtistResponse
-import dev.olgiati.subsonik.model.browsing.getArtistInfo.GetArtistInfoResponse
-import dev.olgiati.subsonik.model.browsing.getArtists.GetArtistsResponse
-import dev.olgiati.subsonik.model.browsing.getGenres.GetGenresResponse
-import dev.olgiati.subsonik.model.browsing.getIndexes.GetIndexesResponse
-import dev.olgiati.subsonik.model.browsing.getMusicDirectory.GetMusicDirectoryResponse
-import dev.olgiati.subsonik.model.browsing.getMusicFolders.GetMusicFoldersResponse
-import dev.olgiati.subsonik.model.browsing.getSimilarSongs.GetSimilarSongsResponse
-import dev.olgiati.subsonik.model.browsing.getSong.GetSongResponse
-import dev.olgiati.subsonik.model.browsing.getTopSongs.GetTopSongsResponse
-import java.util.*
+import java.util.Date
 
 interface BrowsingApi {
     @GET("/rest/getMusicFolders")
@@ -76,7 +77,7 @@ interface BrowsingApi {
         @Query("id") id: String,
         @Query("count") count: Int? = null,
         @Query("includeNotPresent") includeNotPresent: Boolean? = null,
-    ): SubsonicDTO<GetArtistInfoResponse>
+    ): SubsonicDTO<GetArtistInfo2Response>
 
     @GET("/rest/getAlbumInfo")
     suspend fun getAlbumInfo(

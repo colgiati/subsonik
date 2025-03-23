@@ -1,16 +1,18 @@
 package dev.olgiati.subsonik.api
 
+import dev.olgiati.subsonik.model._base.SubsonicDTO
+import dev.olgiati.subsonik.model._base.SubsonicResponse
+import dev.olgiati.subsonik.model.response.bookmarks.GetBookmarksResponse
+import dev.olgiati.subsonik.model.response.bookmarks.GetPlayQueueResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
-import dev.olgiati.subsonik.model.SubsonicDTO
-import dev.olgiati.subsonik.model.SubsonicResponse
-import dev.olgiati.subsonik.model.bookmarks.getBookmarks.GetBookmarksResponse
-import dev.olgiati.subsonik.model.bookmarks.getPlayQueue.GetPlayQueueResponse
 
 interface BookmarksApi {
     @GET("/rest/getBookmarks")
-    suspend fun getBookmarks(@QueryMap params: Map<String, String>): SubsonicDTO<GetBookmarksResponse>
+    suspend fun getBookmarks(
+        @QueryMap params: Map<String, String>
+    ): SubsonicDTO<GetBookmarksResponse>
 
     @GET("/rest/createBookmark")
     suspend fun createBookmark(

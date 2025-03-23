@@ -1,13 +1,20 @@
 package dev.olgiati.subsonik.api
 
+import dev.olgiati.subsonik.model._base.SubsonicDTO
+import dev.olgiati.subsonik.model._base.SubsonicResponse
+import dev.olgiati.subsonik.model.response.userManagement.GetUserResponse
+import dev.olgiati.subsonik.model.response.userManagement.GetUsersResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
-import dev.olgiati.subsonik.model.SubsonicDTO
-import dev.olgiati.subsonik.model.SubsonicResponse
-import dev.olgiati.subsonik.model.userManagement.getUsers.GetUsersResponse
 
 interface UserManagementApi {
+    @GET("/rest/getUser")
+    suspend fun getUser(
+        @QueryMap params: Map<String, String>,
+        @Query("username") username: String,
+    ): SubsonicDTO<GetUserResponse>
+
     @GET("/rest/getUsers")
     suspend fun getUsers(@QueryMap params: Map<String, String>): SubsonicDTO<GetUsersResponse>
 

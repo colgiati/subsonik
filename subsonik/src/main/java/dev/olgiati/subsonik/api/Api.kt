@@ -19,6 +19,8 @@ interface Api :
     UserManagementApi,
     BookmarksApi,
     MediaLibraryScanningApi {
+
     @POST("/auth/login")
     fun signIn(@Body body: SignInRequest): Call<SignInResponse>
+
 }

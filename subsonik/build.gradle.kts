@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "dev.olgiati.subsonik"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -38,7 +38,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "dev.olgiati.subsonik"
             artifactId = "subsonik"
-            version = "0.1.0"
+            version = "0.2.0"
 
             afterEvaluate {
                 from(components["release"])
@@ -47,16 +47,11 @@ publishing {
     }
 }
 
-dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 
+dependencies {
     implementation(libs.coroutines)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
+
+    testImplementation(kotlin("test"))
 }

@@ -3,8 +3,8 @@ package dev.olgiati.subsonik.api
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
-import dev.olgiati.subsonik.model.SubsonicDTO
-import dev.olgiati.subsonik.model.SubsonicResponse
+import dev.olgiati.subsonik.model._base.SubsonicDTO
+import dev.olgiati.subsonik.model._base.SubsonicResponse
 
 interface MediaAnnotationApi {
     @GET("/rest/star")
