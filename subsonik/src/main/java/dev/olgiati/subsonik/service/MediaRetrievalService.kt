@@ -44,7 +44,7 @@ internal interface MediaRetrievalService : SubsonikServiceInterface {
         estimateContentLength: Boolean? = null,
         converted: Boolean? = null,
     ): String {
-        val base = "${client}/rest/stream"
+        val base = "${preferences.url}/rest/stream"
         val defaultParams = getParams()
             .map { "${it.key}=${it.value}" }
             .foldRight("") { a, c -> "$a&$c" }
@@ -62,7 +62,7 @@ internal interface MediaRetrievalService : SubsonikServiceInterface {
     fun downloadURL(
         id: String,
     ): String {
-        val base = "${client}/rest/download"
+        val base = "${preferences.url}/rest/download"
         val defaultParams = getParams()
             .map { "${it.key}=${it.value}" }
             .foldRight("") { a, c -> "$a&$c" }
@@ -72,7 +72,7 @@ internal interface MediaRetrievalService : SubsonikServiceInterface {
     }
 
     fun getCoverArtURL(id: String, size: Int? = null): String {
-        val base = "${client}/rest/getCoverArt"
+        val base = "${preferences.url}/rest/getCoverArt"
         val defaultParams = getParams()
             .map { "${it.key}=${it.value}" }
             .foldRight("") { a, c -> "$a&$c" }
