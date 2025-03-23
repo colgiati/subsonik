@@ -8,6 +8,7 @@ data class SubsonikPreferences(
     val password: String,
     val client: String,
     val version: String,
+    val url: String,
 ) {
     fun getParams(): Map<String, String> {
         val (salt, token) = getSaltAndToken()

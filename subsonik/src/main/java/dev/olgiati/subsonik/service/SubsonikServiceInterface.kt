@@ -6,6 +6,7 @@ import dev.olgiati.subsonik.model._base.SubsonicResponse
 
 internal interface SubsonikServiceInterface {
     var client: Api
+    var preferences: SubsonikPreferences
 
     fun getParams(): Map<String, String>
 

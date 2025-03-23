@@ -14,4 +14,12 @@ class StreamTest : BaseApiTest() {
             assertFailsWith<JsonIOException> { service!!.stream(songId) }
         }
     }
+
+    @Test
+    fun testGetStreamURL() {
+        runBlocking {
+            val songId = "fc69f89505b6ac6f846964cc6f51f69e"
+            println(service!!.streamURL(songId))
+        }
+    }
 }
